@@ -1,0 +1,84 @@
+---
+title: "Data Visualization"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data
+
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+
+mpg <- mpg
+```
+
+Is there any relationship between `displ` and `cty` or `hwy`
+```{r}
+mpg %>% 
+  ggplot(aes(x = displ, y = cty, color = drv,size = cyl)) + 
+  geom_point() +
+  geom_smooth()
+```
+
+# Bar plot
+
+```{r}
+mpg %>% 
+  ggplot(aes(x = manufacturer)) +
+  geom_bar()
+```
+
+```{r}
+mpg %>% 
+  ggplot(aes(x = manufacturer, fill = drv)) +
+  geom_bar()
+```
+
+```{r}
+mpg %>% 
+  ggplot(aes(x = manufacturer, fill = factor(cyl))) +
+  geom_bar()
+```
+
+## Box plot
+
+```{r}
+mpg %>% 
+  ggplot(aes(x = hwy)) +
+  geom_boxplot()+
+  coord_flip()
+```
+
+```{r}
+mpg %>% 
+  ggplot(aes(x = manufacturer, y = cty)) +
+  geom_boxplot()
+```
+
+```{r}
+mpg2 <- mpg %>% 
+  mutate(country = case_when(
+    manufacturer == "audi" | manufacturer == "volkswagen" ~ "Germany",
+    manufacturer == "honda" | manufacturer == "nissan" | manufacturer == "toyota" ~ "Japan",
+    manufacturer == "chevrolet" | manufacturer == "dodge" | manufacturer == "ford" | manufacturer == "jeep" | manufacturer == "lincoln" ~ "USA",
+    manufacturer == "land rover" ~ "England",
+    TRUE ~ "Other"
+  ))
+
+view(mpg2)
+```
+
+
+```{r}
+mpg2 %>% 
+  ggplot(aes(x = country, fill = country)) +
+  geom_bar() +
+  coord_polar()
+```
+
