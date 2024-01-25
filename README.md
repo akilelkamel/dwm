@@ -4,11 +4,16 @@ This repository is dedicated to labs handout for `Data Warehousing and Mining` c
 
 ## 1. Data Visualisation
 
+
+
 ## 2. Clustering
 
-### 2.1 K-means clustering
+**Data**: a dataset example composed by 8 data points. [see data](https://raw.githubusercontent.com/akilelkamel/dwm/main/data.csv)
 
+
+### 2.1 K-means clustering
 
 ### 2.2 Hierarchical clustering
 
 
+[Code Examples](https://github.com/akilelkamel/dwm/blob/main/clustering.r)
