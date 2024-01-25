@@ -12,8 +12,14 @@ This repository is dedicated to labs handout for `Data Warehousing and Mining` c
 
 
 ### 2.1 K-means clustering
+
 ![](https://github.com/akilelkamel/dwm/blob/main/Kmeans%20Clustering.png)
+
+
 ### 2.2 Hierarchical clustering
 
+![](https://github.com/akilelkamel/dwm/blob/main/Hierarchical%20Clustering.png)
 
-[Code Examples](https://github.com/akilelkamel/dwm/blob/main/clustering.r)
+
+
+[See the code](https://github.com/akilelkamel/dwm/blob/main/clustering.r)
